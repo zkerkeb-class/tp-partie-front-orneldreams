@@ -5,7 +5,7 @@
 }
 
 .app-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 50%, #FF8C42 100%);
   color: white;
   padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -37,6 +37,36 @@
   font-size: 2rem;
   margin: 0;
   text-align: center;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-create-header {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-create-header:hover {
+  background: white;
+  color: #764ba2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-favorites-header {

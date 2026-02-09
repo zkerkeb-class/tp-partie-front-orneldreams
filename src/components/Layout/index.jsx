@@ -1,6 +1,7 @@
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getFavorites } from '../../utils/favorites';
+import logoImg from '../../assets/logo.png';
 import './layout.css';
 
 const Layout = () => {
@@ -29,16 +30,21 @@ const Layout = () => {
     <div className="app">
       <header className="app-header">
         <div className="header-content">
-          <img src="/src/assets/logo.png" alt="Logo Ornel" className="header-logo" />
+          <img src={logoImg} alt="Logo Ornel" className="header-logo" />
           <h1 onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>Pokédex Ornel</h1>
-          <Link to="/favorites" className="btn-favorites-header">
-            ❤️ Favoris
-            {isHome && (
-              <span className="favorites-count" aria-label={`${favoritesCount} favoris`}>
-                {favoritesCount}
-              </span>
-            )}
-          </Link>
+          <div className="header-buttons">
+            <Link to="/create" className="btn-create-header">
+              ✨ Ajouter un Pokémon
+            </Link>
+            <Link to="/favorites" className="btn-favorites-header">
+              ❤️ Favoris
+              {isHome && (
+                <span className="favorites-count" aria-label={`${favoritesCount} favoris`}>
+                  {favoritesCount}
+                </span>
+              )}
+            </Link>
+          </div>
         </div>
       </header>
 

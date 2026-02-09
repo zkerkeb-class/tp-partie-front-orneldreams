@@ -45,24 +45,26 @@ const PokeCard = ({ pokemon, onFavoriteRemoved }) => {
     };
 
     const handleMouseEnter = () => {
-        if (isPlayingSound) return;
-        if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
-        hoverTimerRef.current = setTimeout(() => {
-            playSound();
-        }, 300);
+        // Son désactivé au survol
+        // if (isPlayingSound) return;
+        // if (hoverTimerRef.current) clearTimeout(hoverTimerRef.current);
+        // hoverTimerRef.current = setTimeout(() => {
+        //     playSound();
+        // }, 300);
     };
 
     const handleMouseLeave = () => {
-        if (hoverTimerRef.current) {
-            clearTimeout(hoverTimerRef.current);
-            hoverTimerRef.current = null;
-        }
-        if (audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current.currentTime = 0;
-            audioRef.current = null;
-            setIsPlayingSound(false);
-        }
+        // Son désactivé au survol
+        // if (hoverTimerRef.current) {
+        //     clearTimeout(hoverTimerRef.current);
+        //     hoverTimerRef.current = null;
+        // }
+        // if (audioRef.current) {
+        //     audioRef.current.pause();
+        //     audioRef.current.currentTime = 0;
+        //     audioRef.current = null;
+        //     setIsPlayingSound(false);
+        // }
     };
 
     const getTypeColor = (type) => {

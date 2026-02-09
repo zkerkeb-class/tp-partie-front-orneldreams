@@ -9,6 +9,7 @@ import PokemonDetailPage from './pages/PokemonDetailPage'
 import CreatePokemonPage from './pages/CreatePokemonPage'
 import FavoritesPage from './pages/FavoritesPage'
 import SplashScreen from './components/SplashScreen'
+import AutoDemo from './components/AutoDemo'
 
 // Configuration de React Query
 const queryClient = new QueryClient({
@@ -32,6 +33,7 @@ function App() {
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
+          <AutoDemo />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />

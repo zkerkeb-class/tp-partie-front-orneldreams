@@ -1,0 +1,194 @@
+.auto-demo-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.auto-demo-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.5s ease;
+  z-index: 9999;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.demo-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.demo-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin: 20px 0;
+  font-weight: 600;
+  white-space: pre-line;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.demo-progress {
+  margin-top: 30px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  border-radius: 999px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.demo-skip {
+  margin-top: 25px;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.demo-skip:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  border-color: white;
+}
+
+.demo-skip:active {
+  transform: scale(0.98);
+}
+
+/* Éléments en surbrillance */
+.demo-highlight {
+  position: relative;
+  z-index: 9997 !important;
+  box-shadow: 0 0 0 4px #FFD700, 0 0 20px rgba(255, 215, 0, 0.8) !important;
+  border-radius: 8px;
+  animation: pulse-highlight 1.5s infinite;
+}
+
+@keyframes pulse-highlight {
+  0%, 100% {
+    box-shadow: 0 0 0 4px #FFD700, 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 0 8px #FFD700, 0 0 30px rgba(255, 215, 0, 1);
+  }
+}
+
+/* Tooltip avec annotation */
+.demo-tooltip {
+  position: fixed;
+  background: #FFD700;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: slideInTooltip 0.4s ease;
+  max-width: 250px;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes slideInTooltip {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.demo-tooltip::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #FFD700;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  bottom: -6px;
+  left: 50%;
+  margin-left: -6px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrim semi-transparent autour des éléments */
+.demo-scrim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle 300px at var(--x) var(--y), rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+  z-index: 9996;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+

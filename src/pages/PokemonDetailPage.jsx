@@ -1,11 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getPokemonById } from '../utils/api';
 import PokeDetail from '../components/pokeDetail';
 
 const PokemonDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const { data: pokemon, isLoading, error } = useQuery({
     queryKey: ['pokemon', id],
@@ -35,7 +36,10 @@ const PokemonDetailPage = () => {
       pokemon={pokemon} 
       onBack={() => navigate(-1)}
       onPokemonDeleted={() => navigate('/')}
-      onRefresh={() => window.location.reload()}
+      onRefresh={() => {
+        queryClient.invalidateQueries({ queryKey: ['pokemon', id] });
+        queryClient.invalidateQueries({ queryKey: ['pokemons'] });
+      }}
     />
   );
 };

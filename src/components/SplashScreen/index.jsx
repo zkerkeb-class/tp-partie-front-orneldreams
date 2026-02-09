@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import logoImg from '../../assets/logo.png';
 import './splash.css';
 
 const SplashScreen = ({ onFinish }) => {
@@ -24,7 +25,7 @@ const SplashScreen = ({ onFinish }) => {
             <div className="splash-content">
                 <div className="splash-logo-container">
                     <img 
-                        src="/src/assets/logo.png" 
+                        src={logoImg} 
                         alt="Logo Pokédex" 
                         className="splash-logo"
                     />
